@@ -8,17 +8,13 @@ import java.util.List;
 public class StringUtils {
 
     public static String slugify(String original) {
-        try {
-            return (String) Flow.of(StringUtils.split(original))
-                    .filter(o -> !((String) o).isBlank())
-                    .map(o -> StringUtils.removePunctuations((String) o))
-                    .map(o -> StringUtils.stripAccents((String) o))
-                    .map(o -> ((String) o).toLowerCase())
-                    .fold((s1, s2) -> s1 + "-" + s2)
-                    .orElse("");
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
+        return Flow.of(StringUtils.split(original))
+                .filter(s -> !s.isBlank())
+                .map(StringUtils::removePunctuations)
+                .map(StringUtils::stripAccents)
+                .map(String::toLowerCase)
+                .fold((s1, s2) -> s1 + "-" + s2)
+                .orElse("");
     }
 
     public static String stripAccents(String original) {

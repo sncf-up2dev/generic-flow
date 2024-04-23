@@ -19,13 +19,9 @@ public class Filesystem {
         if (subFiles == null) {
             return file.length();
         }
-        try {
-            return (Long) Flow.of(subFiles)
-                    .map(o -> Filesystem.size((File) o))
-                    .fold((o1, o2) -> (long) o1 + (long) o2)
-                    .orElse(0L);
-        } catch (Throwable throwable) {
-            throw (IOException) throwable;
-        }
+        return Flow.of(subFiles)
+                .map(Filesystem::size)
+                .fold(Long::sum)
+                .orElse(0L);
     }
 }
