@@ -43,3 +43,7 @@ La méthode `Filesystem.size` devrait être réalisée ainsi.
 ````
 
 Modifier la classe `Flow` et ses méthodes pour qu'elles prennent les paramètres de type adéquats pour simplifier la réalisation de deux exemples.
+
+Pour commencer, vous pouvez vous mettre sur la branche `start`.
+Le code ne compilera plus, mais vous aurez les versions simplifiées des deux exemples.
+L'objectif est donc de faire en sorte que le code compile bien et que l'application se lance correctement.
