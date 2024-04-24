@@ -6,11 +6,11 @@ import java.util.Optional;
 
 @FunctionalInterface
 public
-interface Folder<T, E extends Throwable> {
+interface Folder<T> {
 
-    T fold(T accumulator, T object) throws E;
+    T fold(T accumulator, T object);
 
-    default Optional<T> fold(Collection<T> collection) throws E {
+    default Optional<T> fold(Collection<T> collection) {
         Iterator<T> itr = collection.iterator();
         if (!itr.hasNext()) {
             return Optional.empty();

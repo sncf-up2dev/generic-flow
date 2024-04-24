@@ -12,19 +12,19 @@ public final class Flow {
         this.collection = collection;
     }
 
-    public Flow map(Mapper mapper) throws Throwable {
+    public Flow map(Mapper mapper) {
         return of(mapper.map(this.collection));
     }
 
-    public Flow filter(Filterer filterer) throws Throwable {
+    public Flow filter(Filterer filterer) {
         return of(filterer.filter(this.collection));
     }
 
-    public Object reduce(Reducer reducer, Object identity) throws Throwable {
+    public Object reduce(Reducer reducer, Object identity) {
         return reducer.reduce(this.collection, identity);
     }
 
-    public Optional fold(Folder folder) throws Throwable {
+    public Optional fold(Folder folder) {
         return folder.fold(this.collection);
     }
 

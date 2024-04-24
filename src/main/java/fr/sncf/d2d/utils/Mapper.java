@@ -5,11 +5,11 @@ import java.util.Collection;
 import java.util.List;
 
 @FunctionalInterface
-public interface Mapper<T, R, E extends Throwable> {
+public interface Mapper<T, R> {
 
-    R map(T object) throws E;
+    R map(T object);
 
-    default Collection<R> map(Collection<T> collection) throws E {
+    default Collection<R> map(Collection<T> collection) {
         List<R> result = new ArrayList<>(collection.size());
         for (T item : collection) {
             result.add(this.map(item));

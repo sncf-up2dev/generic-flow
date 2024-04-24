@@ -7,13 +7,13 @@ import java.io.IOException;
 
 public class Filesystem {
 
-    public static long size(String path) throws IOException {
+    public static long size(String path) {
         return size(new File(path));
     }
 
-    public static long size(File file) throws IOException {
+    public static long size(File file) {
         if (!file.exists()) {
-            throw new IOException("File does not exist: %s".formatted(file));
+            throw new RuntimeException("File does not exist: %s".formatted(file));
         }
         File[] subFiles = file.listFiles();
         if (subFiles == null) {

@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public interface Filterer<T, E extends Throwable> {
+public interface Filterer<T> {
 
-    boolean test(T object) throws E;
+    boolean test(T object);
 
-    default Collection<T> filter(Collection<T> collection) throws E {
+    default Collection<T> filter(Collection<T> collection) {
         List<T> result = new ArrayList<>();
         for (T item : collection) {
             if (this.test(item)) {
