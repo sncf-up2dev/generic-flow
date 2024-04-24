@@ -1,5 +1,7 @@
 # Exercice Généricité
 
+## Introduction
+
 Le code fourni présente la classe `Flow` qui reproduit certaine fonctionnalité de `java.util.stream.Stream`, d'un point de vue fonctionnel en non pas algorithmique.
 
 Comme vous pouvez remarquer, ni la classe ni aucune de ses méthodes n'a de paramètre de type.
@@ -7,6 +9,8 @@ Comme vous pouvez remarquer, ni la classe ni aucune de ses méthodes n'a de para
 La classe est utilisée dans deux exemples :
 * Dans la classe utilitaire `StringUtils` elle est utilisée pour produire le slug à partir d'une chaîne de caractères.
 * Dans la classe utilitaire `Filesystem` elle est utilisée pour calculer la taille d'un fichier ou un dossier.
+
+## Problématique
 
 La réalisation de deux example n'est pas facile à lire à cause de manque de type explicite dans la classe `Flow`.
 
@@ -42,8 +46,15 @@ La méthode `Filesystem.size` devrait être réalisée ainsi.
     }
 ````
 
-Modifier la classe `Flow` et ses méthodes pour qu'elles prennent les paramètres de type adéquats pour simplifier la réalisation de deux exemples.
+## Objectif
+
+Modifier la classe `Flow` et ses méthodes pour qu'elles prennent les paramètres de type adéquats afin de simplifier la réalisation de deux exemples.
+
+## Instructions
 
 Pour commencer, vous pouvez vous mettre sur la branche `start`.
 Le code ne compilera plus, mais vous aurez les versions simplifiées des deux exemples.
 L'objectif est donc de faire en sorte que le code compile bien et que l'application se lance correctement.
+
+Une version simplifiée de l'exercice, sans traitement d'exception, se trouve sur la branche `simplified`.
+Vous pouvez commencer par faire fonctionner cette version-là avant de passer à la version complète sur la branche `start`.
